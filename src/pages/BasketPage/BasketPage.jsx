@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import Container from "../../components/Container/Container";
 
 export default function BasketPage() {
   return (
-    <main>BasketPage</main>
-  )
+    <main>
+      <Container>BasketPage</Container>
+    </main>
+  );
 }

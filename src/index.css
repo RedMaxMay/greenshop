@@ -10,8 +10,18 @@
   --color-green: #46A358;
   --color-border: rgba(70, 163, 89, 0.35);
   --color-gray: #333333;
-  --color-light-gray: #727272;
-  --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --color-light-gray: #8e8e8e;
+  --color-bg: rgb(251, 251, 251);
+  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headings);
 }
 
 body {

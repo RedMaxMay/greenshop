@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import Container from "../../components/Container/Container";
 
 export default function AllProductsPage() {
   return (
-    <main>AllProductsPage</main>
-  )
+    <main>
+      <Container>AllProductsPage</Container>
+    </main>
+  );
 }
