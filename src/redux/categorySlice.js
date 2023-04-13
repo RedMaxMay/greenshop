@@ -4,10 +4,13 @@ const categorySlice = createSlice({
   name: "category",
   initialState: {
     categories: [],
+    loading: false,
   },
   reducers: {
     loadCategories: (state, action) => {
-      state.categories = action.payload;
+      state.loading = true;
+      state.categories = [...action.payload];
+      state.loading = false;
     },
   },
 });

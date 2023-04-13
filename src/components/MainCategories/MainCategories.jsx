@@ -2,13 +2,13 @@ import React from "react";
 import s from "./style.module.css";
 import { Link } from "react-router-dom";
 import ButtonLight from "../ButtonLight/ButtonLight";
-
-import img1 from "./1.jpeg";
-import img2 from "./2.jpeg";
-import img3 from "./3.jpeg";
-import img4 from "./4.jpeg";
+import { useSelector } from "react-redux";
+import CategoryItem from "../CategoryItem/CategoryItem";
+import CategoryItemSkeleton from "../CategoryItemSkeleton/CategoryItemSkeleton";
 
 export default function MainCategories() {
+  const { categories, loading } = useSelector((state) => state.categories);
+
   return (
     <section className={s.main_categories_wrap}>
       <div className={s.info}>
@@ -19,32 +19,15 @@ export default function MainCategories() {
       </div>
 
       <div className={s.categories}>
-        <div className={s.category}>
-          <div className={s.img_wrap}>
-            <img src={img1} alt="" />
-          </div>
-          <div className={s.title}>
-            <p>Category name</p>
-          </div>
-        </div>
-        <div className={s.category}>
-          <div className={s.img_wrap}>
-            <img src={img2} alt="" />
-          </div>
-          <p>Category name</p>
-        </div>
-        <div className={s.category}>
-          <div className={s.img_wrap}>
-            <img src={img3} alt="" />
-          </div>
-          <p>Category name</p>
-        </div>
-        <div className={s.category}>
-          <div className={s.img_wrap}>
-            <img src={img4} alt="" />
-          </div>
-          <p>Category name</p>
-        </div>
+        {loading
+          ? [1, 2, 3, 4].map((n) => <CategoryItemSkeleton key={n} />)
+          : categories.map((category, index) => {
+              return index <= 3 ? (
+                <CategoryItem key={category.title} {...category} />
+              ) : (
+                ""
+              );
+            })}
       </div>
     </section>
   );

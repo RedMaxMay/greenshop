@@ -1,13 +1,12 @@
 import axios from "axios";
-
-const URL = `http://localhost:3333/products`;
+import URL from "./url";
 
 const getAllProducts = () => {
-  return axios.get(`${URL}/all`);
+  return axios.get(`${URL}/products/all`);
 };
 
 const getSingleProduct = (id) => {
-  return axios.get(`${URL}/${id}`);
+  return axios.get(`${URL}/products/${id}`);
 };
 
 export default { getAllProducts, getSingleProduct };

@@ -1,34 +1,7 @@
-.main_categories_wrap {
-    margin: 20px 0;
-}
-
-.info {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.info h2 {
-    font-size: 1.5rem;
-}
-
-.categories {
-    margin: 20px 0;
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.categories > div {
-    width: 25%;
-}
-
-
-/* 
 .category {
     position: relative;
-    width: 25%;
-    height: 100%;
+    /* width: 25%;
+    height: 100%; */
     cursor: pointer;
 }
 
@@ -67,7 +40,7 @@
     box-shadow: var(--shadow);
 }
 
-p::before {
+.title p::before {
     content: "";
     position: absolute;
     left: 0;
@@ -81,4 +54,4 @@ p::before {
 
 .category:hover p::before {
     transform: scale(1);
-} */
+}

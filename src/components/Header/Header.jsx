@@ -17,14 +17,14 @@ export default function Header() {
             <NavLink className={checkActive} to="/greenshop">
               Main Page
             </NavLink>
+            <NavLink className={checkActive} to="/categories">
+              Categories
+            </NavLink>
             <NavLink className={checkActive} to="/products/all">
               All products
             </NavLink>
             <NavLink className={checkActive} to="/products/sale">
-              Sale
-            </NavLink>
-            <NavLink className={checkActive} to="/categories">
-              Catalog
+              SALE
             </NavLink>
           </nav>
 

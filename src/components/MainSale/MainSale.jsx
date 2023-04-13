@@ -2,29 +2,28 @@ import React from "react";
 import s from "./style.module.css";
 import { Link } from "react-router-dom";
 import ButtonLight from "../ButtonLight/ButtonLight";
+import ProductItem from "../ProductItem/ProductItem";
+import { useSelector } from "react-redux";
 
 export default function MainSale() {
+  const { products } = useSelector((state) => state.products);
+  const productsWithDiscount = products.filter(
+    (prod) => prod.discont_price !== null
+  );
+
   return (
     <section className={s.main_sale_wrap}>
       <div className={s.info}>
-        <h2>Sales</h2>
+        <h2>Products on Sale</h2>
         <Link to="/products/sale">
           <ButtonLight text="All sale" />
         </Link>
       </div>
 
       <div className={s.products}>
-        <div className={s.product}>
-          <div className={s.img_wrap}>
-            <div className={s.discount}>13% OFF</div>
-            <img src="https://placehold.co/250x250" alt="" />
-          </div>
-          <p className={s.title}>Product title</p>
-          <div className={s.price_wrap}>
-            <p className={s.price}>$123.00</p>
-            <p className={s.old_price}>$210.00</p>
-          </div>
-        </div>
+        {productsWithDiscount.map((prod, index) => {
+          return index <= 7 ? <ProductItem key={prod.title} {...prod} /> : "";
+        })}
       </div>
     </section>
   );

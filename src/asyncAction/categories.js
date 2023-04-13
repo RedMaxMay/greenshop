@@ -1,13 +1,12 @@
 import axios from "axios";
-
-const URL = `http://localhost:3333/categories`;
+import URL from "./url";
 
 const getAllCategories = () => {
-  return axios.get(`${URL}/all`);
+  return axios.get(`${URL}/categories/all`);
 };
 
 const getSingleCategory = (id) => {
-  return axios.get(`${URL}/${id}`);
+  return axios.get(`${URL}/categories/${id}`);
 };
 
 export default { getAllCategories, getSingleCategory };

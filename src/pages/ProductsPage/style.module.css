@@ -1,21 +1,19 @@
-.main_sale_wrap {
-    margin: 20px 0;
-}
-
-.info {
+.wrap {
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 20px;
-    align-items: center;
 }
 
-.info h2 {
-    font-size: 1.5rem;
+main h1 {
+    margin: 20px 0;
+    font-size: 2rem;
 }
 
 .products {
-    margin: 20px 0;
     display: grid;
     justify-content: space-between;
     gap: 20px;
+    width: calc(100% - 220px);
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }

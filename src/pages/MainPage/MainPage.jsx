@@ -5,7 +5,6 @@ import MainCategories from "../../components/MainCategories/MainCategories";
 import Coupon from "../../components/Coupon/Coupon";
 import MainSale from "../../components/MainSale/MainSale";
 import Features from "../../components/Features/Features";
-import { useSelector } from "react-redux";
 
 export default function MainPage() {
   return (
