@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 import { loadCategories } from "./redux/categorySlice";
 import { loadProducts } from "./redux/productSlice";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ function App() {
         <Route path="/products/:title" element={<ProductsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-
+      <ScrollToTopButton />
       <Footer />
     </>
   );

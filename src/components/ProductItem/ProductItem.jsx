@@ -2,6 +2,7 @@ import React from "react";
 import s from "./style.module.css";
 import URL from "../../asyncAction/url";
 import { Link } from "react-router-dom";
+import ProductItemBtns from "../ProductItemBtns/ProductItemBtns";
 
 export default function ProductItem({
   id,
@@ -14,6 +15,10 @@ export default function ProductItem({
 }) {
   return (
     <div className={s.container}>
+      <div className={s.btns_wrap}>
+        <ProductItemBtns />
+      </div>
+
       <Link to={`/product/${id}`}>
         <div className={s.product}>
           <div className={s.img_wrap}>

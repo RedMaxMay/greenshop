@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "../../components/Container/Container";
 import { useSelector } from "react-redux";
 import CategoryItem from "../../components/CategoryItem/CategoryItem";
 import s from "./style.module.css";
+import Coupon from "../../components/Coupon/Coupon";
 
 export default function CategoriesPage() {
   const { categories } = useSelector((state) => state.categories);
-  console.log(categories);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <main>
       <Container>
@@ -16,6 +21,7 @@ export default function CategoriesPage() {
             <CategoryItem key={category.title} {...category} />
           ))}
         </div>
+        <Coupon />
       </Container>
     </main>
   );

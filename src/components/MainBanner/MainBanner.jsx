@@ -15,7 +15,7 @@ export default function MainBanner() {
         </p>
         <p className={s.info}>
           We are an online plant shop offering a wide range of cheap and trendy
-          plants. Use our plants to create an unique Urban Jungle. Order your
+          plants. Use our plants to create an unique garden. Order your
           favorite plants!
         </p>
         <Link to="/products/sale">

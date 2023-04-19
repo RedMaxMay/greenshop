@@ -11,7 +11,7 @@
 }
 
 .button:hover {
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
     background-color: var(--color-green);
     color: #fff;
 }
