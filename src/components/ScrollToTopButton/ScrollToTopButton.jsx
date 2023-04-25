@@ -7,7 +7,7 @@ function ScrollToTopButton() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop;
-      setIsVisible(scrollTop > 200);
+      setIsVisible(scrollTop > 50);
     };
 
     window.addEventListener("scroll", handleScroll);

@@ -52,3 +52,23 @@ footer {
     width: 100%;
     position: absolute;
 }
+
+@media (max-width: 767px) {
+    .footer {
+        flex-direction: column;
+    }
+
+    .social_title {
+        display: none;
+    }
+
+    .info {
+        align-items: center;
+
+    }
+
+    .info,
+    .map {
+        width: 100%;
+    }
+}

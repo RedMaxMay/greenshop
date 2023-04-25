@@ -44,10 +44,10 @@ export default function ProductsPage() {
         <h1>
           {title === undefined ? "ALL PRODUCTS" : title.toLocaleUpperCase()}
         </h1>
-
         <div className={s.wrap}>
-          <Sidebar />
-
+          <div className={s.desktop_aside}>
+            <Sidebar />
+          </div>
           <div className={s.products}>
             <ProductsFilterBar />
             {products

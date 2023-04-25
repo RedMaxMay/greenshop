@@ -109,7 +109,7 @@ export default function Footer() {
               </a>
             </div>
             <div className={s.block}>
-              <p>Social media:</p>
+              <p className={s.social_title}>Social media:</p>
               <a
                 target="_blank"
                 href="https://www.facebook.com/"

@@ -3,6 +3,11 @@
     background: linear-gradient(to left, rgba(70, 163, 88, 0.6), rgba(70, 163, 89, 0.7)), url("./discount3.png");
 }
 
+.coupon p {
+    font-size: 1.5rem;
+    text-transform: initial;
+}
+
 .coupon>div {
     display: flex;
     justify-content: space-evenly;
@@ -42,6 +47,29 @@
     gap: 20px;
 }
 
-.coupon .form input {
+.form>div>input {
     border-radius: 7px;
+    outline: none;
+    padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .img_container {
+        display: none;
+    }
+
+
+    .text_container {
+        width: 100%;
+    }
+
+    .form>div>input {
+        width: 100% !important;
+    }
+
+    .form ul {
+        width: 260px !important;
+    }
+
 }

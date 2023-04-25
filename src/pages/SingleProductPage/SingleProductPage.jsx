@@ -6,11 +6,16 @@ import s from "./style.module.css";
 import URL from "../../asyncAction/url";
 import Button from "../../components/Button/Button";
 import ButtonLight from "../../components/ButtonLight/ButtonLight";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../../redux/basketSlice";
 
 export default function SingleProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [quantity, setQuantity] = useState(1);
+  const [isAdded, setIsAdded] = useState(false);
+
+  const dispatch = useDispatch();
 
   const handleIncrement = () => {
     setQuantity(quantity + 1);
@@ -18,6 +23,11 @@ export default function SingleProductPage() {
 
   const handleDecrement = () => {
     if (quantity > 1) setQuantity(quantity - 1);
+  };
+
+  const cartHandle = () => {
+    dispatch(addToBasket({ id: +id, quantity }));
+    setIsAdded(true);
   };
 
   useEffect(() => {
@@ -60,7 +70,11 @@ export default function SingleProductPage() {
                   <p>{quantity}</p>
                   <ButtonLight text="+" onClick={handleIncrement} />
                 </div>
-                <Button text="Add to Cart" />
+                {isAdded ? (
+                  <Button text="✔ Added to cart" />
+                ) : (
+                  <Button onClick={cartHandle} text="Add to Cart" />
+                )}
               </div>
 
               <div className={s.description}>

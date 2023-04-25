@@ -1,4 +1,4 @@
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -9,14 +9,17 @@ import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import { useEffect } from "react";
 import categoriesAsyncAction from "./asyncAction/categories";
 import productsAsyncAction from "./asyncAction/products";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loadCategories } from "./redux/categorySlice";
 import { loadProducts } from "./redux/productSlice";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
+import BasketPage from "./pages/BasketPage/BasketPage";
 
 function App() {
   const dispatch = useDispatch();
+
+  const { basket } = useSelector((state) => state.basket);
 
   useEffect(() => {
     categoriesAsyncAction
@@ -28,6 +31,10 @@ function App() {
       .then(({ data }) => dispatch(loadProducts(data)));
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("GreenShop", JSON.stringify(basket));
+  }, [basket]);
+
   return (
     <>
       <Header />
@@ -38,6 +45,7 @@ function App() {
         <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/products/:title" element={<ProductsPage />} />
+        <Route path="/basket" element={<BasketPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ScrollToTopButton />

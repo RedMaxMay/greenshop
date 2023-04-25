@@ -42,3 +42,10 @@
 .info {
     color: var(--color-light-gray);
 }
+
+
+@media (max-width: 768px) {
+    .banner_container div {
+        background-image: url('./banner_mob.png');
+    }
+}

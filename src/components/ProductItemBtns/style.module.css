@@ -23,3 +23,5 @@
     opacity: 1;
     fill: var(--color-green);
 }
+
+@media (max-width: 768px) {}

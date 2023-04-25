@@ -16,7 +16,7 @@ export default function ProductItem({
   return (
     <div className={s.container}>
       <div className={s.btns_wrap}>
-        <ProductItemBtns />
+        <ProductItemBtns id={id} />
       </div>
 
       <Link to={`/product/${id}`}>

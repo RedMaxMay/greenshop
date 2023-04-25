@@ -2,10 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "./style.module.css";
 
-
-export default function Logo() {
+export default function Logo({ onClick }) {
   return (
-    <NavLink to="/greenshop" className={s.logo_container}>
+    <NavLink onClick={onClick} to="/greenshop" className={s.logo_container}>
       <svg
         width="35"
         height="35"
@@ -19,6 +18,7 @@ export default function Logo() {
         />
       </svg>
       <svg
+      className={s.name}
         width="111"
         height="14"
         viewBox="0 0 111 14"

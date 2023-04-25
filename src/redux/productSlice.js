@@ -29,13 +29,13 @@ const productSlice = createSlice({
       }));
     },
     sortFilter: (state, action) => {
-      if (action.payload === "1") {
+      if (action.payload === "Default") {
         state.products.sort((a, b) => a.id - b.id);
-      } else if (action.payload === "2") {
+      } else if (action.payload === "Price - Low to High") {
         state.products.sort(
           (a, b) => (a.discont_price || a.price) - (b.discont_price || b.price)
         );
-      } else if (action.payload === "3") {
+      } else if (action.payload === "Price - High to Low") {
         state.products.sort(
           (a, b) => (b.discont_price || b.price) - (a.discont_price || a.price)
         );

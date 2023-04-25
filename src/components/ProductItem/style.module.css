@@ -57,7 +57,6 @@
 
 .price_wrap {
     display: flex;
-    /* justify-content: space-between; */
     padding: 0 20px 20px;
 }
 
@@ -83,4 +82,11 @@
 
 .container:hover .btns_wrap {
     display: block;
+}
+
+@media (max-width: 768px) {
+    .btns_wrap {
+        display: block;
+    }
+
 }
