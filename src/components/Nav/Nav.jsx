@@ -6,6 +6,10 @@ import { NavLink } from "react-router-dom";
 export default function Nav({ isOpen, handleHamburgerClick }) {
   const checkActive = ({ isActive }) => (isActive ? s.active : "");
 
+  // isOpen
+  //   ? (window.document.body.style.overflow = "hidden")
+  //   : (window.document.body.style.overflow = "unset");
+
   return (
     <>
       <div
@@ -14,7 +18,7 @@ export default function Nav({ isOpen, handleHamburgerClick }) {
       ></div>
       <nav className={`${s.nav} ${isOpen ? s.open : ""}`}>
         <div className={`${s.mob_logo} ${isOpen ? s.open : ""}`}>
-          <Logo onClick={handleHamburgerClick}/>
+          <Logo onClick={handleHamburgerClick} />
         </div>
         <NavLink
           onClick={handleHamburgerClick}

@@ -16,6 +16,10 @@ export default function ProductsFilterBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [sortType, setSortType] = useState("Default");
 
+  // isOpen
+  //   ? (window.document.body.style.overflow = "hidden")
+  //   : (window.document.body.style.overflow = "unset");
+
   const handleFilterClick = () => {
     setIsOpen(!isOpen);
   };

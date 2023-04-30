@@ -77,5 +77,25 @@
 
 .description {
     color: var(--color-light-gray);
-
 }
+
+
+@media (max-width: 767px) {
+ .product {
+    flex-direction: column;
+    gap: 10px;
+ }
+ .img_wrap, .all_info_wrap {
+    width: 100%;
+ }
+}
+
+@media (max-width: 375px) {
+    .btns {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .price_wrap {
+        justify-content: center;
+    }
+   }

@@ -65,6 +65,7 @@
         z-index: 200;
 
         flex-direction: column;
+        overflow: auto;
     }
 
     .nav.open {

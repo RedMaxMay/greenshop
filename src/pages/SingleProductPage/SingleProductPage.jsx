@@ -18,10 +18,12 @@ export default function SingleProductPage() {
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
+    setIsAdded(false);
     setQuantity(quantity + 1);
   };
 
   const handleDecrement = () => {
+    setIsAdded(false);
     if (quantity > 1) setQuantity(quantity - 1);
   };
 
