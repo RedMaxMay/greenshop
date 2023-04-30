@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# This project is an online store application built using React and Redux Toolkit.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
 
-## Available Scripts
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Acknowledgments](#acknowledgments)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+### The challenge
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Users should be able to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- View the main categories of products, a block with discounts, and a list of discounted products on the homepage
+- Add products to the cart from anywhere on the site and see the cart update
+- See the full list of categories on a separate page
+- Filter products by category, discount, price range, and search for specific items in the catalog
+- Filter products by category, price range, and search for specific items in the catalog
+- Apply all filters to each category
+- Click on a product to see more information about product
+- Add multiple items to the cart
+- View the full list of products in the cart with the ability to edit it
+- Тot lose their cart on page refresh or when revisiting the site
 
-### `npm test`
+### Links
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Solution URL: [Add solution URL here](https://redmaxmay.github.io/greenshop/)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## My process
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Built with
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid
+- Flexbox
+- Axios
+- LocalStorage 
+- React
+- React Router
+- React Hooks 
+- CSS modules
+- Redux Toolkit
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## What I learned
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+During the development of this project, I gained valuable experience and knowledge on various technologies and concepts. Here are some of my major takeaways:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Single-Page Applications (SPAs): I learned how to create a SPA with React, allowing the site to load more quickly and feel more responsive to users.
+- React: I deepened my understanding of React by using hooks to manage state and make reusable components.
+- Redux Toolkit: I learned how to use Redux Toolkit to manage complex state more efficiently and streamline my development process.
+- CSS modules: I used CSS modules for scoped styles, which made my code more modular and easier to maintain.
+- LocalStorage: I used LocalStorage to persist data on the client-side, allowing users to save their cart data and continue shopping on return visits.
+- Axios: I gained experience using Axios for making HTTP requests to my backend API.
+- Debugging: I gained experience in debugging errors in my code and finding solutions to problems encountered throughout the project.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Overall, this project was a valuable learning experience that allowed me to apply my knowledge in a practical way.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgments
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React documentation](https://reactjs.org/docs/getting-started.html)
+- [Redux Toolkit documentation](https://redux-toolkit.js.org/)
+- [Axios documentation](https://github.com/axios/axios)
+- [React-router-dom documentation](https://reactrouter.com/web/guides/quick-start)
+- [CSS modules documentation](https://github.com/css-modules/css-modules)
+- [Creating a Single-Page App in React using React Router](https://www.taniarascia.com/single-page-app-without-a-framework/)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
