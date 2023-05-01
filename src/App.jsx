@@ -24,11 +24,13 @@ function App() {
   useEffect(() => {
     categoriesAsyncAction
       .getAllCategories()
-      .then(({ data }) => dispatch(loadCategories(data)));
+      .then(({ data }) => dispatch(loadCategories(data)))
+      .catch((error) => console.log(error));
 
     productsAsyncAction
       .getAllProducts()
-      .then(({ data }) => dispatch(loadProducts(data)));
+      .then(({ data }) => dispatch(loadProducts(data)))
+      .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {

@@ -15,16 +15,26 @@ const sendPhone = (data) => {
 export default function Coupon() {
   const [phone, setPhone] = useState("");
   const [isSent, setIsSent] = useState(false);
+  const [isCorrectPhone, setIsCorrectPhone] = useState(true);
+
+  const phoneClass = isCorrectPhone
+    ? s.input_wrap
+    : `${s.input_wrap} ${s.input_wrap_error}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    sendPhone(phone)
-      .then((resp) => {
-        setPhone("");
-        setIsSent(true);
-      })
-      .catch((err) => console.log(err));
+    if (phone.length > 5) {
+      setIsCorrectPhone(true);
+      sendPhone(phone)
+        .then((resp) => {
+          setPhone("");
+          setIsSent(true);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      setIsCorrectPhone(false);
+    }
   };
 
   return (
@@ -49,11 +59,13 @@ export default function Coupon() {
             </h3>
 
             <form className={s.form} method="post" onSubmit={handleSubmit}>
-              <PhoneInput
-                country={"de"}
-                value={phone}
-                onChange={(phone) => setPhone(phone)}
-              />
+              <div className={phoneClass}>
+                <PhoneInput
+                  country={"de"}
+                  value={phone}
+                  onChange={(phone) => setPhone(phone)}
+                />
+              </div>
 
               <ButtonLight text="Get a discount" />
             </form>

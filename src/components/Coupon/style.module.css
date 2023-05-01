@@ -47,10 +47,22 @@
     gap: 20px;
 }
 
-.form>div>input {
+.input_wrap input {
     border-radius: 7px;
     outline: none;
     padding: 20px;
+    width: 100% !important;
+    /* outline: 2px solid red !important; */
+}
+
+.input_wrap {
+    border-bottom: 2px solid transparent;
+    border-radius: 7px;
+}
+
+.input_wrap_error {
+    border-bottom: 2px solid red;
+    border-radius: 7px;
 }
 
 
@@ -62,10 +74,6 @@
 
     .text_container {
         width: 100%;
-    }
-
-    .form>div>input {
-        width: 100% !important;
     }
 
     .form ul {

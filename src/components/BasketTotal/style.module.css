@@ -51,9 +51,19 @@
     margin: 20px 0;
 }
 
-.form>div>input {
+.input_wrap input {
     border-radius: 7px;
     outline: none;
     padding: 20px;
     width: 100% !important;
+}
+
+.input_wrap {
+    border-bottom: 2px solid transparent;
+    border-radius: 7px;
+}
+
+.input_wrap_error {
+    border-bottom: 2px solid red;
+    border-radius: 7px;
 }
