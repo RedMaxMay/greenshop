@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://redmaxmay.github.io/greenshop/)
+- Solution URL: [https://redmaxmay.github.io/greenshop/](https://redmaxmay.github.io/greenshop/)
 
 
 ## My process
