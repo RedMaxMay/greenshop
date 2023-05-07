@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/greenshop/static/css/main.d2b6a228.css",
-    "main.js": "/greenshop/static/js/main.6987ad04.js",
+    "main.css": "/greenshop/static/css/main.e61284b6.css",
+    "main.js": "/greenshop/static/js/main.7fb255bb.js",
     "static/media/banner2.png": "/greenshop/static/media/banner2.5b3f381b5e94ef95ca03.png",
     "static/media/banner_mob.png": "/greenshop/static/media/banner_mob.669aca48c73644cba982.png",
     "static/media/discount_img.png": "/greenshop/static/media/discount_img.6f8d93fc2479c012c0c7.png",
-    "static/media/thanks2.png": "/greenshop/static/media/thanks2.3ff0ecc8ba38c20767cb.png",
+    "static/media/404.png": "/greenshop/static/media/404.f32e3c5b19da9727aab2.png",
     "index.html": "/greenshop/index.html",
-    "main.d2b6a228.css.map": "/greenshop/static/css/main.d2b6a228.css.map",
-    "main.6987ad04.js.map": "/greenshop/static/js/main.6987ad04.js.map"
+    "main.e61284b6.css.map": "/greenshop/static/css/main.e61284b6.css.map",
+    "main.7fb255bb.js.map": "/greenshop/static/js/main.7fb255bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2b6a228.css",
-    "static/js/main.6987ad04.js"
+    "static/css/main.e61284b6.css",
+    "static/js/main.7fb255bb.js"
   ]
 }
