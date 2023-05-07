@@ -1,13 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import URL from "../asyncAction/url";
-import axios from "axios";
-
-const fetchCategories = createAsyncThunk(
-  "categories/fetchCategories",
-  async () => {
-    return await axios(axios.get(`${URL}/categories/all`));
-  }
-);
+import { createSlice } from "@reduxjs/toolkit";
 
 const categorySlice = createSlice({
   name: "categories",

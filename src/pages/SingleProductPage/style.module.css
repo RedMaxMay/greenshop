@@ -3,6 +3,7 @@
     gap: 50px;
     margin: 50px 0;
     justify-content: space-between;
+    min-height: 400px;
 }
 
 .img_wrap {
@@ -44,7 +45,6 @@
     color: var(--color-light-gray);
     text-decoration: line-through;
     margin: 10px 0;
-
 }
 
 .btns {
@@ -81,13 +81,15 @@
 
 
 @media (max-width: 767px) {
- .product {
-    flex-direction: column;
-    gap: 10px;
- }
- .img_wrap, .all_info_wrap {
-    width: 100%;
- }
+    .product {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .img_wrap,
+    .all_info_wrap {
+        width: 100%;
+    }
 }
 
 @media (max-width: 375px) {
@@ -95,7 +97,8 @@
         flex-direction: column;
         gap: 10px;
     }
+
     .price_wrap {
         justify-content: center;
     }
-   }
+}

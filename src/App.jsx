@@ -31,6 +31,7 @@ function App() {
       .getAllProducts()
       .then(({ data }) => dispatch(loadProducts(data)))
       .catch((error) => console.log(error));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
         <Route path="/products/:title" element={<ProductsPage />} />
         <Route path="/basket" element={<BasketPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/404" element={<NotFoundPage />} />
       </Routes>
       <ScrollToTopButton />
       <Footer />

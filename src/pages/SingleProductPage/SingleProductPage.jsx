@@ -8,12 +8,17 @@ import Button from "../../components/Button/Button";
 import ButtonLight from "../../components/ButtonLight/ButtonLight";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/basketSlice";
+import NotFound from "../../components/NotFound/NotFound";
 
 export default function SingleProductPage() {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [id]);
 
   const dispatch = useDispatch();
 
@@ -35,16 +40,22 @@ export default function SingleProductPage() {
   useEffect(() => {
     productsAsyncAction
       .getSingleProduct(id)
-      .then(({ data }) => setProduct(data[0]))
+      .then(({ data }) => {
+        setProduct(data[0]);
+      })
       .catch((err) => console.log(err));
   }, [id]);
 
-  return (
-    <main>
-      <Container>
-        {product.length === 0 ? (
-          <p>Loading...</p>
-        ) : (
+  if (product === undefined) {
+    return (
+      <main>
+        <NotFound />
+      </main>
+    );
+  } else if (product.id) {
+    return (
+      <main>
+        <Container>
           <div className={s.product}>
             <div className={s.img_wrap}>
               <img src={`${URL}/${product.image}`} alt={product.title} />
@@ -85,8 +96,16 @@ export default function SingleProductPage() {
               </div>
             </div>
           </div>
-        )}
-      </Container>
-    </main>
-  );
+        </Container>
+      </main>
+    );
+  } else {
+    return (
+      <main>
+        <Container>
+          <p>Loading...</p>
+        </Container>
+      </main>
+    );
+  }
 }

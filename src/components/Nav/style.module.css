@@ -70,7 +70,7 @@
 
     .nav.open {
         transform: translateX(0%);
-        
+
     }
 
     .nav a:hover::before {
@@ -99,7 +99,7 @@
     .block {
         display: flex;
         align-items: center;
-        justify-content: start;
+        justify-content: flex-start;
         gap: 20px;
         color: var(--color-light-gray);
     }

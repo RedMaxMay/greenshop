@@ -4,16 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductItem from "../../components/ProductItem/ProductItem";
 import s from "./style.module.css";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProductsFilterBar from "../../components/ProductsFilterBar/ProductsFilterBar";
 import { useEffect } from "react";
 import { resetSearchFilter } from "../../redux/productSlice";
 
 export default function ProductsPage() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(resetSearchFilter());
+    // eslint-disable-next-line
   }, []);
 
   const { title } = useParams();
@@ -32,11 +34,20 @@ export default function ProductsPage() {
       );
     } else {
       const currentCategory = categories.find((cat) => cat.title === title);
+
+      if (currentCategory === undefined) return null;
+
       return products.products.filter(
         (prod) => prod.categoryId === currentCategory.id
       );
     }
   });
+
+  useEffect(() => {
+    if (!products) {
+      navigate("/404");
+    }
+  }, [navigate, products]);
 
   return (
     <main>
@@ -50,11 +61,13 @@ export default function ProductsPage() {
           </div>
           <div className={s.products}>
             <ProductsFilterBar />
-            {products
-              .filter(({ selectShow, priceShow }) => selectShow && priceShow)
-              .map((prod) => (
-                <ProductItem key={prod.id} {...prod} />
-              ))}
+            {products === null
+              ? ""
+              : products
+                  .filter(
+                    ({ selectShow, priceShow }) => selectShow && priceShow
+                  )
+                  .map((prod) => <ProductItem key={prod.id} {...prod} />)}
           </div>
         </div>
       </Container>
