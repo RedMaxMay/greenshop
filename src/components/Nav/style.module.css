@@ -61,7 +61,7 @@
         background-color: #fff;
         padding: 20px;
         transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.5s ease-in-out;
         z-index: 200;
 
         flex-direction: column;
@@ -77,22 +77,14 @@
         transform: scale(0);
     }
 
-    .mob_logo.open {
-        display: block;
-    }
-
-    .mob_info.open {
+    .mob_logo {
         display: block;
     }
 
     .mob_info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 20px;
+        display: block;
         padding-top: 10px;
         border-top: 1px solid var(--color-green);
-
         margin-top: 10px;
     }
 
@@ -105,7 +97,6 @@
     }
 
     .menu_backdrop {
-        display: block;
         position: fixed;
         top: 0;
         left: 0;
@@ -116,12 +107,13 @@
         justify-content: center;
         align-items: center;
         z-index: 199;
-        animation: fadeIn 0.3s;
-        transform: translateX(100%);
+        transition: opacity 0.5s ease;
+        opacity: 0;
+        pointer-events: none;
     }
 
     .menu_backdrop.open {
-        transform: translateX(0%);
+        pointer-events: auto;
+        opacity: 1;
     }
-
 }

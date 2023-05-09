@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import s from "./style.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Container from "../Container/Container";
 import Logo from "../Logo/Logo";
 import { useSelector } from "react-redux";

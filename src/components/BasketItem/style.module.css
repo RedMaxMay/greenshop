@@ -76,7 +76,7 @@
     .basket_item {
         grid-template-columns: 75px 1fr 1fr 1fr 1fr;
         gap: 10px;
-        padding: 0 10px 10px 0;
+        padding: 0 10px 0 0;
 
     }
 
@@ -99,6 +99,7 @@
     .quantity_wrap {
         grid-column: 3 / 5;
         justify-self: center;
+        margin: 10px 0;
     }
 
 }
@@ -108,7 +109,7 @@
 
     .basket_item {
         grid-template-columns: 50px 1fr 1fr 1fr 1fr;
-        padding: 0 10px 10px 0;
+        padding: 0 10px 0 0;
     }
 
     .img_wrap {
