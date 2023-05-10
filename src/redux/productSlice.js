@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const productSlice = createSlice({
   name: "product",
   initialState: {
@@ -44,12 +43,14 @@ const productSlice = createSlice({
     },
     priceFilter: (state, action) => {
       const { priceFrom, priceTo } = action.payload;
-      if (priceFrom || priceTo) {
+      const defaultPriceTo = priceTo === "" ? Infinity : priceTo;
+
+      if (priceFrom || defaultPriceTo) {
         state.products = state.products.map((prod) => ({
           ...prod,
           priceShow:
             (prod.discont_price || prod.price) >= priceFrom &&
-            (prod.discont_price || prod.price) <= priceTo,
+            (prod.discont_price || prod.price) <= defaultPriceTo,
         }));
       } else
         state.products = state.products.map((prod) => ({
