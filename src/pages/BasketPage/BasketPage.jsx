@@ -49,7 +49,7 @@ export default function BasketPage() {
                 <BasketItem key={prod.id} {...prod} />
               ))}
             </div>
-            <BasketTotal totalPrice={totalPrice} />
+            <BasketTotal totalPrice={totalPrice} basket={basketProducts} />
           </div>
         )}
       </Container>

@@ -6,10 +6,6 @@ import { NavLink } from "react-router-dom";
 export default function Nav({ isOpen, handleHamburgerClick }) {
   const checkActive = ({ isActive }) => (isActive ? s.active : "");
 
-  isOpen
-    ? (window.document.body.style.overflow = "hidden")
-    : (window.document.body.style.overflow = "unset");
-
   return (
     <>
       <div

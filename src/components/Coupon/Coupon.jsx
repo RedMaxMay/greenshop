@@ -9,7 +9,7 @@ import axios from "axios";
 import URL from "../../asyncAction/url";
 
 const sendPhone = (data) => {
-  return axios.post(`${URL}/sale/send`);
+  return axios.post(`${URL}/sale/send`, data);
 };
 
 export default function Coupon() {
@@ -28,6 +28,7 @@ export default function Coupon() {
       setIsCorrectPhone(true);
       sendPhone(phone)
         .then((resp) => {
+          console.log(resp);
           setPhone("");
           setIsSent(true);
         })

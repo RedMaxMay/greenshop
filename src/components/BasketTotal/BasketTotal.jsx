@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import s from "./style.module.css";
 import Button from "../Button/Button";
 import PhoneInput from "react-phone-input-2";
+import ThanksForOrderModal from "../ThanksForOrderModal/ThanksForOrderModal";
 import axios from "axios";
 import URL from "../../asyncAction/url";
-import ThanksForOrderModal from "../ThanksForOrderModal/ThanksForOrderModal";
 
 const sendOrder = (data) => {
-  return axios.post(`${URL}/order/send`);
+  return axios.post(`${URL}/order/send`, data);
 };
 
-export default function BasketTotal({ totalPrice }) {
+export default function BasketTotal({ totalPrice, basket }) {
   const [phone, setPhone] = useState("");
   const [isSent, setIsSent] = useState(false);
   const [isCorrectPhone, setIsCorrectPhone] = useState(true);
@@ -24,7 +24,11 @@ export default function BasketTotal({ totalPrice }) {
 
     if (phone.length > 5) {
       setIsCorrectPhone(true);
-      sendOrder(phone)
+      const data = {
+        phoneNumber: phone,
+        order: basket,
+      };
+      sendOrder(data)
         .then((resp) => {
           setPhone("");
           setIsSent(true);
